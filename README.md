@@ -1,2 +1,1 @@
-# Master-Thesis
-Detecting Robot Mistakes in Human-robot Conversations based on Non-verbal Visual Behaviour
+# Detecting Robot Mistakes in Human-robot Conversations based on Non-verbal Visual Behaviour
