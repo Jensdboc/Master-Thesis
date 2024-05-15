@@ -24,3 +24,8 @@ performanceLLM: compare flan-t5-large vs gpt-3.5-turbo on Recipe dataset
 Data
 utils.py
 5 files for running the different models
+
+## GIF
+
+## BlendshapeAnalysis
+Do not rerun these files as they are based on not available data
