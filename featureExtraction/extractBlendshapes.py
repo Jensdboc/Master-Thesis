@@ -18,10 +18,16 @@ from IPython.display import display, Image, Video
 from PIL import Image as PIL_Image
 from mediapipe.tasks import python as mp_python
 
-MP_TASK_FILE = "/project_ghent/Master-Thesis/featureExtraction/face_landmarker_with_blendshapes.task"
-MP_TASK_FILE = "face_landmarker_with_blendshapes.task"
-BLENDSHAPE_HEADER = [f"blendshape{i}" for i in range(52)]
+import argparse
 
+parser = argparse.ArgumentParser()
+
+parser.add_argument("-d", "--dir", type=str)
+
+args = parser.parse_args()
+
+MP_TASK_FILE = "/project_ghent/Master-Thesis/featureExtraction/face_landmarker_with_blendshapes.task"
+BLENDSHAPE_HEADER = [f"blendshape{i}" for i in range(52)]
 
 class FaceMeshDetector:
     """
@@ -84,21 +90,21 @@ def detect_and_write_facial_keypoints(video_path: str, outputpath: str):
             writer.writerow(BLENDNAMES)
             for blendshape in blendshapes:
                 writer.writerow(blendshape)
-    else:
-        print(len(blendshapes), vlen)
-
 
 BLENDNAMES = ['_neutral', 'browDownLeft', 'browDownRight', 'browInnerUp', 'browOuterUpLeft', 'browOuterUpRight', 'cheekPuff', 'cheekSquintLeft', 'cheekSquintRight', 'eyeBlinkLeft', 'eyeBlinkRight', 'eyeLookDownLeft', 'eyeLookDownRight', 'eyeLookInLeft', 'eyeLookInRight', 'eyeLookOutLeft', 'eyeLookOutRight', 'eyeLookUpLeft', 'eyeLookUpRight', 'eyeSquintLeft', 'eyeSquintRight', 'eyeWideLeft', 'eyeWideRight', 'jawForward', 'jawLeft', 'jawOpen', 'jawRight', 'mouthClose', 'mouthDimpleLeft', 'mouthDimpleRight', 'mouthFrownLeft', 'mouthFrownRight', 'mouthFunnel', 'mouthLeft', 'mouthLowerDownLeft', 'mouthLowerDownRight', 'mouthPressLeft', 'mouthPressRight', 'mouthPucker', 'mouthRight', 'mouthRollLower', 'mouthRollUpper', 'mouthShrugLower', 'mouthShrugUpper', 'mouthSmileLeft', 'mouthSmileRight', 'mouthStretchLeft', 'mouthStretchRight', 'mouthUpperUpLeft', 'mouthUpperUpRight', 'noseSneerLeft', 'noseSneerRight']
 STRONG_BLENDNAMES = ['_neutral', 'browDownLeft', 'browDownRight', 'browInnerUp', 'browOuterUpLeft', 'browOuterUpRight','eyeLookInLeft', 'eyeLookInRight', 'eyeLookOutLeft', 'eyeLookOutRight', 'eyeWideLeft', 'eyeWideRight', 'jawForward', 'jawLeft', 'jawOpen', 'jawRight', 'mouthClose', 'mouthFrownLeft', 'mouthFrownRight', 'mouthFunnel', 'mouthLowerDownLeft', 'mouthLowerDownRight', 'mouthPucker', 'mouthRight', 'mouthSmileLeft', 'mouthSmileRight', 'mouthStretchLeft', 'mouthStretchRight', 'mouthUpperUpLeft', 'mouthUpperUpRight']
 
-root = "/project_ghent/Master-Thesis/gif/data"
-output_root = "/project_ghent/Master-Thesis/gif/blendshape"
+# root = "/project_ghent/Master-Thesis/featureExtraction/output_videos_split"
+# output_root = "/project_ghent/Master-Thesis/featureExtraction/output_blendshape_split"
 # root = "/project_ghent/Master-Thesis/gif/data"
 # output_root = "/project_ghent/Master-Thesis/gif/keypoints"
+# root = "/project_ghent/Master-Thesis/featureExtraction/output_videos"
+# output_root = "/project_ghent/Master-Thesis/featureExtraction/output_blendshape"
+root = "/project_ghent/Master-Thesis/featureExtraction/output_video_after_robot_utterance"
+output_root = "/project_ghent/Master-Thesis/featureExtraction/output_blendshape_after_robot_utterance"
 
 for dir in os.listdir(root):
-    if dir == "Neutral":
-    # if dir == "NO" or dir == "YES":
+    if dir == args.dir:
         for video in os.listdir(f"{root}/{dir}"):
             inputpath = f"{root}/{dir}/{video}"
             if ".ipynb_checkpoints" not in inputpath and ".nfs" not in inputpath:
@@ -106,3 +112,4 @@ for dir in os.listdir(root):
                 if not os.path.exists(outputpath):
                     print(inputpath)
                     detect_and_write_facial_keypoints(inputpath, outputpath)
+                
