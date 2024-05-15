@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 6
+names: ['Boredom', 'Confusion', 'Engaged', 'Frustration', 'Sleepy', 'Yawning']
+
+roboflow:
+  workspace: malaviya-national-institute-of-technology-jaipur-india-6e6jq
+  project: affective-states
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/malaviya-national-institute-of-technology-jaipur-india-6e6jq/affective-states/dataset/2

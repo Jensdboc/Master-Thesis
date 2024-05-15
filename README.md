@@ -13,3 +13,14 @@ The models consistently overfits on the training dataset without being able to g
 Nevertheless, this investigation describes the obstacles and provides guidance on the continuation of working with less expressive and natural data.
 
 To confirm the complexity of the data, a human baseline study is carried out that shows an overall poor accuracy from human annotators and a lack of agreement among them.
+
+# Repository Structure
+
+## LLM:
+GPT4-0: test performance with GPT4-0 model on 10 confusion and 10 neutral gifs
+performanceLLM: compare flan-t5-large vs gpt-3.5-turbo on Recipe dataset
+
+## Roboflow:
+Data
+utils.py
+5 files for running the different models
