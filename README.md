@@ -25,9 +25,11 @@ Data
 utils.py
 5 files for running the different models
 
-## BlendshapeAnalysis
+## BlendshapeAnalysis:
 Do not rerun these files as they are based on not available data
 
-## GIF
+See Section 5.5 Statistical Tests
 
-## Recipe
+## GIF:
+
+## Recipe:
