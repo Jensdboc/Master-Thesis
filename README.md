@@ -37,7 +37,7 @@ performanceLLM: compare Flan-t5-large vs gpt-3.5-turbo on Recipe dataset
 ## Roboflow:
 The `data` folder contains the necessary data to run various models, and `utils.py` contains function that are used by other files.
 
-There are 5 files for running the 5 different models.
+There are 5 interactive notebooks for running the 5 different models.
 
 ## BlendshapeAnalysis:
 Do not rerun these files as they are based on unavailable data.
