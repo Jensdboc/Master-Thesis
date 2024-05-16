@@ -8,7 +8,7 @@ from typing import Tuple, List, Dict, Any
 
 import torch
 import torch.nn as nn
-from torch.nn import LSTM, Linear, Sigmoid, ReLU, GRU
+from torch.nn import LSTM, Linear, Sigmoid, ReLU
 from torch.utils.data import Dataset
 import torchvision
 import torchvision.transforms as transforms
@@ -255,13 +255,11 @@ def split_dataset(
     val_ds = GIFDataset(
         ids=val_ids, labels=val_labels, transform=val_transformer, processor=processor
     )
-    # test_ds = GIFDataset(ids=test_ids, labels=test_labels, transform=test_transformer, processor=processor)
 
     base_path = "../pickled/"
 
     torch.save(train_ds, f"{base_path}train_ds_{endpath}_s{skipframes}_{name}.pth")
     torch.save(val_ds, f"{base_path}val_ds_{endpath}_s{skipframes}_{name}.pth")
-    # torch.save(test_ds, f"{base_path}test_ds_{endpath}_s{skipframes}_{name}.pth")
 
     print(f"Succesfully saved at {base_path} with skipframes = {skipframes} [{name}]")
 
@@ -283,7 +281,6 @@ def get_dataset(
     # Pickle dataset such that no randomisation of different machines would introduce different different results
     train_ds = torch.load(f"{base_path}train_ds_{endpath}_s{skipframes}_{name}.pth")
     val_ds = torch.load(f"{base_path}val_ds_{endpath}_s{skipframes}_{name}.pth")
-    # test_ds = torch.load(f"{base_path}test_ds_{endpath}_s{skipframes}_{name}.pth")
 
     print(
         f"Succesfully retrieved at {base_path} with skipframes = {skipframes} [{name}]"
@@ -416,13 +413,13 @@ class RecipeImageModel(nn.Module):
             self.backbone = BackBoneModelResNet(
                 resnet50(weights="IMAGENET1K_V1"), self.input_size
             )
-        # self.rnn = LSTM(input_size=self.input_size, hidden_size=self.hidden_size, num_layers=self.num_layers, batch_first=True)
-        self.rnn = GRU(
-            input_size=self.input_size,
-            hidden_size=self.hidden_size,
-            num_layers=self.num_layers,
-            batch_first=True,
-        )
+        self.rnn = LSTM(input_size=self.input_size, hidden_size=self.hidden_size, num_layers=self.num_layers, batch_first=True)
+        # self.rnn = GRU(
+        #     input_size=self.input_size,
+        #     hidden_size=self.hidden_size,
+        #     num_layers=self.num_layers,
+        #     batch_first=True,
+        # )
         self.relu = ReLU()
         self.fc2 = Linear(self.hidden_size, 1)
 

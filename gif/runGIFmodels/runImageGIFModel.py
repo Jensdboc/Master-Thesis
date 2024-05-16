@@ -1,4 +1,3 @@
-# python /project_ghent/Master-Thesis/ownModelNotebooks/testImages/runImageModel.py -b 16 -s 2 -e 10 -lr 0.00001 -name small
 import utils
 import argparse
 import numpy as np
