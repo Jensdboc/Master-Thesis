@@ -28,19 +28,19 @@ conda activate ThesisRobot
 ```
 
 ## LLM:
+Do not rerun these files as they are based on unavailable data.
+
 GPT4-0: test performance with GPT4-0 model on 10 confusion and 10 neutral gifs
 
-performanceLLM: compare flan-t5-large vs gpt-3.5-turbo on Recipe dataset
+performanceLLM: compare Flan-t5-large vs gpt-3.5-turbo on Recipe dataset
 
 ## Roboflow:
-Data
+The `data` folder contains the necessary data to run various models, and `utils.py` contains function that are used by other files.
 
-utils.py
-
-5 files for running the different models
+There are 5 files for running the 5 different models.
 
 ## BlendshapeAnalysis:
-Do not rerun these files as they are based on not available data
+Do not rerun these files as they are based on unavailable data.
 
 See Section 5.5 Statistical Tests
 
