@@ -62,7 +62,7 @@ python createImageDataset.py -s <skipframes>
 python runImageGIFModel.py -b <batch_size> -s <skipframes> -e <epoch> -lr <learning_rate> -pos <positive_weight> -w <workers> -is <input_size> -hs <hidden_size> -nl <num_layers> -name <name> -bb <backbone> -gpu <gpus>
 ```
 
-Afterwards, the dataset will be saved in `pickel`, the model in `models` and the train and validation curves, the ROC-curves and the validation matrix will be saved in `images`.
+Afterwards, the dataset will be saved in `pickled`, the model in `models` and the train and validation curves, the ROC-curves and the validation matrix will be saved in `images`.
 
 
 ## Recipe:
