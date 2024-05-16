@@ -16,6 +16,9 @@ To confirm the complexity of the data, a human baseline study is carried out tha
 
 # Repository Structure
 
+To install the corresponding libraries and depencencies use
+`pip install -r requirements.txt`
+
 ## LLM:
 GPT4-0: test performance with GPT4-0 model on 10 confusion and 10 neutral gifs
 performanceLLM: compare flan-t5-large vs gpt-3.5-turbo on Recipe dataset
