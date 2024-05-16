@@ -1,4 +1,3 @@
-# python /project_ghent/Master-Thesis/ownModelNotebooks/testBlendshapes/runBlendshapeModel.py -b 64 -s 1 -e 20 -lr 0.001
 import utils
 import argparse
 import numpy as np
@@ -53,7 +52,6 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 model = utils.RecipeBlendshapeModel(input_size=INPUT_SIZE, hidden_size=HIDDEN_SIZE, num_layers=NUM_LAYERS).to(device)
 
-# criterion = nn.BCEWithLogitsLoss()
 criterion = nn.BCEWithLogitsLoss(reduction='mean', pos_weight=torch.tensor([pos_weight]).to(device))
 optimizer = optim.Adam(model.parameters(), lr=lr)
 

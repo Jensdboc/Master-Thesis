@@ -134,7 +134,7 @@ def train_and_plot(model, parameters):
     return train_accuracies, val_accuracies
 
 
-def plot_confusionmatrix(model, test_loader):
+def plot_confusionmatrix(model, test_loader, test=True):
     # Assuming you have a DataLoader named validation_loader and a trained model
     model.eval()
 
@@ -158,8 +158,10 @@ def plot_confusionmatrix(model, test_loader):
 
     disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=class_names)
     disp.plot(cmap=plt.cm.Blues, values_format=".4g")
-
-    plt.title("Confusion Matrix Test")
+    if test:
+        plt.title("Confusion Matrix Test")
+    else:
+        plt.title("Confusion Matrix Validation")
     plt.show()
 
 
