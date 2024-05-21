@@ -3,16 +3,13 @@
 This master dissertation investigates the detection of robot mistakes by making use of non-verbal video data. 
 It outlines the possibilities and challenges that arise and focusses especially on video data to leverage contextual elements. 
 Detecting these mishaps is crucial for enabling smoother conversations and improved robot instructors.
-
 To facilitate this detection, a dataset containing human-robot conversations featuring intentionally designed mistakes in the robot dialogue is employed. 
 Natural facial expressions of the participants are used to detect previously made mistakes.
-Various machine learning approaches based on an architecture that consists out of a \gls{CNN} followed by an \gls{RNN} are investigated.
-
-While this architecture successfully classifies other datasets with clear emotions, the performance on the main dataset falls short. 
-The models consistently overfits on the training dataset without being able to generalize.
-Nevertheless, this investigation describes the obstacles and provides guidance on the continuation of working with less expressive and natural data.
-
+Various machine learning approaches based on an architecture that consists out of a Convolutional Neural Network (CNN) followed by an Recurrent Neural Network (RNN) are investigated.
+While this architecture successfully classifies other datasets with clear emotions, this dissertation describes the obstacles and provides guidance on the continuation of working with less expressive and natural data. 
 To confirm the complexity of the data, a human baseline study is carried out that shows an overall poor accuracy from human annotators and a lack of agreement among them.
+
+**Keywords**: Robot Mistakes, Non-verbal video data, Human-Robot Conversation
 
 # Repository Structure
 
@@ -68,3 +65,9 @@ Afterwards, the dataset will be saved in `pickled`, the model in `models` and th
 ## Recipe:
 
 These files have similar functionality to the GIF dataset, but due to privacy reason they cannot be used and have not been altered to work out of the box.
+
+## ReleventMomentExtraction
+
+This investigates 20 arbitrary chosen videos with annotated relevant moments. 
+It predicts relevant moments based on blendshape and keypoint peak detection algorithms.
+
