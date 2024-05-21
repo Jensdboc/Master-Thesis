@@ -65,3 +65,9 @@ Afterwards, the dataset will be saved in `pickled`, the model in `models` and th
 ## Recipe:
 
 These files have similar functionality to the GIF dataset, but due to privacy reason they cannot be used and have not been altered to work out of the box.
+
+## ReleventMomentExtraction
+
+This investigates 20 arbitrary chosen videos with annotated relevant moments. 
+It predicts relevant moments based on blendshape and keypoint peak detection algorithms.
+
