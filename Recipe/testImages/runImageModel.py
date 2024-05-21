@@ -14,6 +14,9 @@ from torchvision.models import vgg16, resnet50
 from transformers import AutoImageProcessor, AutoModelForImageClassification
 
 seed = 42
+np.random.seed(seed)
+torch.manual_seed(seed)
+torch.cuda.manual_seed_all(seed)
 
 print("Parsing arguments...")
 
