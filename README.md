@@ -4,7 +4,7 @@ This master dissertation investigates the detection of robot mistakes by making 
 Detecting these mishaps is crucial for enabling smoother conversations and improved robot instructors.
 To facilitate this detection, a dataset containing human-robot conversations featuring intentionally designed mistakes in the robot dialogue is employed. 
 Natural facial expressions of the participants are used to detect previously made mistakes, with the focus on video data to leverage contextual elements.
-Various Machine Learning (ML) approaches based on an architecture that consists out of a Convolution Neural Network (CNN) followed by a Recurrent Neural Network (RNN) are investigated.
+Various Machine Learning (ML) approaches based on an architecture that consists of a Convolution Neural Network (CNN) followed by a Recurrent Neural Network (RNN) are investigated.
 While this architecture successfully classifies other datasets with clear and unambiguous emotional expressions, it is not capable of capturing information from the natural expressions as a response to robot mistakes.
 To confirm the complexity of the data, a human baseline study is carried out that shows an overall poor accuracy from human annotators and a lack of agreement among them.
 This dissertation describes the obstacles and provides guidance on the continuation of working with less expressive and natural data.
